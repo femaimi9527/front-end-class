@@ -1,6 +1,7 @@
  /* 元素选择器 */
  h1 {
     color: red;
+    font-family: STKaiti;
 }
 /* 类选择器 */
 .cls {
@@ -17,4 +18,14 @@
 /* 通配符选择器 */
 * {
     color: slategray;
+    /* font-family: STKaiti; */
+}
+
+h4 {
+    font-family: FangSong;
+    /* font-family: Microsoft Yahei; */
+}
+
+ol {
+    font-family: SimSun;
 }
