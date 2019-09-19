@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 直接设置给 a 标签文本居中 没有效果，需要给包含 a 标签的 标签设置才可以  */
+        /* a {
+            
+            text-align: center;
+        } 
+        */
+
+        div {
+            width: 300px;
+            height: 200px;
+            background-color: yellowgreen;
+            /* 设置 文本内容在水平方向的对齐方式 */
+            text-align: center;
+        }
+
+        a {
+            /* 设置 文本内容所在行的高度 */
+            line-height: 200px;
+            /* 设置 超链接的样式 */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- div标签没有任何的含义和效果 ？！ -->
+    <div>
+        <a href="https://www.imooc.com">慕课网</a>
+    </div>
+    
+</body>
+</html>

@@ -8,14 +8,31 @@
     <style>
         ul {
             width: 200px;
-            height: 400px;
+            height: 200px;
             background-color: yellowgreen;
 
             /* 去掉项目符号 */
             list-style-type: none;
             /* 设置边框属性 */
             /* border: 1px dashed black; */
-            border: 1px 
+            /* border: 1px solid black; */
+
+            /* 只设置了上边框，则只出现上边框的效果 */
+            /* 实线边框（solid）、虚线边框（dashed）、点线边框（dotted）、双线边框（double） */
+            border-top: 1px dashed black;
+
+            /* 盒子模型的内边距设置 */
+            padding: 0px;
+            
+            /* 盒子模型的外边距设置 */
+            /* 如下设置，上右下左都有100px的边距了 */
+            margin: 100px;
+        }
+
+        ol {
+            width: 200px;
+            height: 200px;
+            background-color: lightskyblue;
         }
     </style>
 </head>
@@ -25,5 +42,11 @@
         <li>第二行</li>
         <li>第三行</li>
     </ul>
+
+    <ol>
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+    </ol>
 </body>
 </html>
