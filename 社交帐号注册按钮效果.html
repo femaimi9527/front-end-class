@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>社交帐号注册按钮效果</title>
+    <style>
+        div {
+            /* 行内块级元素也可以使用文本居中属性 */
+            text-align: center;
+        }
+
+        a {
+            /* 改 a 标签为行内块级元素 ，便于设置宽度和高度 */
+            display: inline-block;
+
+            /* 设置宽高 */
+            width: 160px;
+            height: 40px;  
+
+            /* 设置背景颜色 */
+            background-color: yellow;
+
+            /* 设置背景图片 */
+            background-image: url("images/btn1.png");
+
+            /* 设置背景图片平铺方式 */
+            background-repeat: no-repeat;
+
+            /* 设置背景图片大小,100%值的意思是：背景图片充满当前元素的宽高 */
+            background-size: 100%;
+
+        }
+
+        #btn1 {
+            background-image: url("images/btn1.png");
+        }
+
+        #btn2 {
+            background-image: url("images/btn2.png");
+        }
+
+        #btn3 {
+            background-image: url("images/btn3.png");
+        }
+
+        #btn4 {
+            background-image: url("images/btn4.png");
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a id="btn1" href="#"></a>
+        <a id="btn2" href="#"></a>
+        <a id="btn3" href="#"></a>
+        <a id="btn4" href="#"></a>
+    </div>
+</body>
+</html>
