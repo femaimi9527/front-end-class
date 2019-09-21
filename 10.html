@@ -10,7 +10,16 @@
             /* 去掉元素默认的8px外边距 */
             margin: 0px;
             /* 设置内边距 */
-            padding: 1000px;
+            padding: 50px;
+            height: 1000px;
+        }
+
+        #box {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+
+            position: relative;
         }
 
         h1 {
@@ -22,16 +31,14 @@
             background-color: yellow;
 
             /* 设置绝对定位 */
+            /* 相对于父元素 div 标签的最左边向右边移动100px */
             position: absolute;
             left: 100px;
         }
     </style>
 </head>
-<!-- <body>
-    <h1>慕课网</h1>
-</body> -->
 <body>
-    <div>
+    <div id="box">
         <h1>慕课网</h1>
     </div>
 </body>

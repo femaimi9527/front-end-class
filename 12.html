@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>imooc-12</title>
+    <style>
+        #father {
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+        }
+        /* 可以直接设置子级元素 */
+        /* #son {
+            width: 50px;
+            height: 30px;
+            border: 1px solid black;
+        } */
+        /* 层级选择器 */
+        /* 相对于上面的写法来说，从父级元素再到子级元素这种选择更准确 */
+        #father>#son {
+            width: 50px;
+            height: 30px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="father">
+        <div id="son">慕课网</div>
+    </div>
+</body>
+</html>
