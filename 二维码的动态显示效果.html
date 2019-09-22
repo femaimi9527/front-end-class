@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二维码的动态显示效果</title>
+    <style>
+        body {
+            /* 去掉默认的8px外边距 */
+            margin: 0px;
+        }
+
+        #box {
+            /* 设置宽度为父级元素的100% */
+            width: 100%;
+            height: 100px;
+            background-color: black;
+
+            /* 开启定位 */
+            position:fixed;
+            bottom: 0px;
+        }
+
+        #wechat {
+            width: 44px;
+            height: 44px;
+
+            background-image: url("images/wechat.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            
+            /* 两个值，第一个值表示：上下边距，第二个值表示：左右边距 */
+            /* 当前div显示高度是44px ，而外层父级高度是100px，所以剩下的高度是：100px-44px =56px*/
+            /* 要想居中显示，那就是上下各一半，也就是56px/2=28px */
+            margin: 28px auto;
+
+            position: relative;
+        }
+
+        #code {
+            display: none;
+
+            width: 180px;
+            height: 180px;
+            background-color: white;
+
+            background-image: url("images/code.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            position: absolute;
+            left: -66px;
+            bottom: 70px;
+        }
+
+        #wechat:hover {
+            background-image: url("images/wehchatH.png");
+        }
+
+        #wechat:hover>#code {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 用于包含二维码所有的内容，显示在页面中的底部 -->
+    <div id="box">
+        <!-- 用于显示微信图标 -->
+        <div id="wechat">
+            <!-- 用于显示/隐藏二维码图片 -->
+            <div id="code"></div>
+        </div>
+    </div>
+</body>
+</html>
