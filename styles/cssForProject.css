@@ -1,0 +1,59 @@
+body {
+    background: #DAD299;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B0DAB9, #DAD299);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* 字体风格 */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* 大盒子 */
+.list {
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+}
+/* 一级、二级的父元素 */
+.grandfather {
+    list-style-type: none;
+    background-color: chocolate;
+    width: 200px;
+    height: 180px;
+    margin: 0px auto;
+    
+    position: relative;
+    text-align: left;
+
+}
+/* 一级菜单 */
+.father {
+    background-color: yellowgreen;
+    width: 80px;
+    height: 30px;
+    
+}
+
+/* 二级菜单 */
+.son {
+    background-color: lightpink;
+    width: 80px;
+    height: 30px;
+    
+    position: absolute;
+    left: 80px;
+    top: 0px;
+    
+}
+
+
+
+a {
+    text-decoration: none;
+}
