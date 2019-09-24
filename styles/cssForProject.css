@@ -1,4 +1,5 @@
 body {
+    /* 背景渐变色风格 */
     background: #DAD299;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);
@@ -16,42 +17,62 @@ body {
 
 /* 大盒子 */
 .list {
+    margin: 0px;
+    padding: 0px;
     width: 500px;
-    height: 300px;
-    background-color: #fff;
+    height: 500px;
+    background: #43C6AC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-/* 一级、二级的父元素 */
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 一级、二级的父元素 body div ul li */
 .grandfather {
     list-style-type: none;
-    background-color: chocolate;
-    width: 200px;
-    height: 180px;
-    margin: 0px auto;
     
+    
+    width: 300px;
+    height: 500px;
+    margin: 0px auto;
     position: relative;
-    text-align: left;
-
 }
-/* 一级菜单 */
+/* 一级菜单 body div ul li div */
 .father {
     background-color: yellowgreen;
-    width: 80px;
+    width: 180px;
     height: 30px;
+    position: relative;
+    left: -100px;
     
 }
 
-/* 二级菜单 */
+/* 二级菜单 body div ul li ol */
+/* display的隐藏、显示思路：先设置需要显示的子级元素隐藏，dispaly：none；
+    再设置父元素对应下面的子元素，display：block或者其他非none属性。
+*/
 .son {
-    background-color: lightpink;
-    width: 80px;
-    height: 30px;
-    
+    background: #ee0979;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 180px;
+    height: 90px;
     position: absolute;
-    left: 80px;
+    left: 180px;
     top: 0px;
-    
+    display: none;
+}
+.son>li {
+    border: 1px dashed white;
 }
 
+.father:hover>.son {
+    display: block;
+}
 
 
 a {

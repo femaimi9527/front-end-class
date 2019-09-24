@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,12 @@
             /* 去掉默认的8px外边距 */
             margin: 0px;
             /* 额外加的-1 */
-            background: #FF5F6D;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: #FF5F6D;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #FFC371, #FF5F6D);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
         }
 
@@ -21,50 +25,43 @@
             width: 100%;
             height: 100px;
             background-color: black;
-
             /* 开启定位 */
             /* 固定定位 */
-            position:fixed;
+            position: fixed;
             bottom: 0px;
         }
 
         #wechat {
             width: 44px;
             height: 44px;
-
             background-image: url("images/wechat.png");
             background-repeat: no-repeat;
             background-size: 100%;
-            
             /* 两个值，第一个值表示：上下边距，第二个值表示：左右边距 */
             /* 当前div显示高度是44px ，而外层父级高度是100px，所以剩下的高度是：100px-44px =56px*/
             /* 要想居中显示，那就是上下各一半，也就是56px/2=28px */
             margin: 28px auto;
-
             /* 相对定位 */
             position: relative;
         }
 
         #code {
-            display: none;
-
             width: 180px;
             height: 180px;
             background-color: white;
-
             background-image: url("images/code.png");
             background-repeat: no-repeat;
             background-size: 100%;
-
             position: absolute;
             left: -66px;
             bottom: 70px;
+            display: none;
         }
-
         /* 设置伪类选择器 */
         #wechat:hover {
-            background-image: url("images/wehchatH.png");
+            background-image: url("images/wechatH.png");
         }
+
         /* 核心代码 */
         /* 层级选择器 */
         #wechat:hover>#code {
@@ -77,8 +74,8 @@
             height: 50px;
             /* 相对定位 */
             position: relative;
-            top: 350px;
-            left: 880px;
+            top: 180px;
+            left: 480px;
         }
 
         /* 额外加的-2 */
@@ -88,12 +85,11 @@
             width: 160px;
             height: 50px;
             /* 固定定位 */
-            position: fixed;
-            top: 350px;
+            position: absolute;
+            bottom: 0px;
         }
         /* 额外加的-3 */
-        /* 如果上面给h1设置了颜色的话，这个hover就无效了 */
-        h1:hover{
+        h1:hover {
             color: #FF5F6D;
         }
     </style>
