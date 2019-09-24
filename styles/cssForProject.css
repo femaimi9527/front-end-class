@@ -1,15 +1,12 @@
 body {
     /* 背景渐变色风格 */
-    background: #DAD299;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #B0DAB9, #DAD299);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #de6161;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2657eb, #de6161);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2657eb, #de6161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     /* 字体风格 */
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    /* 去除默认8px内外边距 */
     margin: 0px;
     padding: 0px;
 }
@@ -19,35 +16,57 @@ body {
 .list {
     margin: 0px;
     padding: 0px;
-    width: 500px;
+    width: 400px;
     height: 500px;
-    background: #43C6AC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /* background: #43C6AC;   */
+    /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);   */
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #F8FFAE, #43C6AC);  */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 ul {
     margin: 0px;
     padding: 0px;
+    
 }
+
+li {
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+span {
+    color: black;
+    font: bolder;
+}
+
 
 /* 一级、二级的父元素 body div ul li */
 .grandfather {
-    list-style-type: none;
-    
-    
+    list-style-type: none;  
     width: 300px;
-    height: 500px;
+    height: auto;
     margin: 0px auto;
     position: relative;
 }
 /* 一级菜单 body div ul li div */
 .father {
-    background-color: yellowgreen;
+    background: #ef32d9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89fffd, #ef32d9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89fffd, #ef32d9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 180px;
-    height: 30px;
+    height: auto;
+    padding: 0px 5px;
+    border: 1px dotted white;
+    text-align: center;
     position: relative;
-    left: -100px;
+    left: -50px;
     
 }
 
@@ -56,18 +75,23 @@ ul {
     再设置父元素对应下面的子元素，display：block或者其他非none属性。
 */
 .son {
-    background: #ee0979;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    width: 180px;
-    height: 90px;
+    background: #A770EF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top: 1px dashed white;
+    border-left: 1px dashed white;
+    border-right: 1px dashed white;
+    list-style-type: decimal-leading-zero;
+    width: 100%;
+    height: auto;
     position: absolute;
-    left: 180px;
-    top: 0px;
+    left: 191px;
+    top: -1px;
     display: none;
 }
 .son>li {
-    border: 1px dashed white;
+    border-bottom: 1px dashed white;
+    text-align: left;
 }
 
 .father:hover>.son {
@@ -75,6 +99,28 @@ ul {
 }
 
 
-a {
-    text-decoration: none;
+
+.grandson {
+    background: #f4c4f3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fc67fa, #f4c4f3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fc67fa, #f4c4f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top: 1px dashed white;
+    border-left: 1px dashed white;
+    border-right: 1px dashed white;
+    list-style-type: decimal-leading-zero;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 230px;
+    top: -1px;
+    display: none;
 }
+
+.grandson>li {
+    border-bottom: 1px dashed white;
+    text-align-last: left;
+}
+
+.father>.son>li:hover>.grandson {
+    display: block;
+} 
