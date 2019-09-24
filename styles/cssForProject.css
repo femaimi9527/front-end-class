@@ -29,7 +29,6 @@ body {
 ul {
     margin: 0px;
     padding: 0px;
-    
 }
 
 li {
@@ -121,6 +120,6 @@ span {
     text-align-last: left;
 }
 
-.father>.son>li:hover>.grandson {
+.father>.son>:hover>.grandson {
     display: block;
 } 
