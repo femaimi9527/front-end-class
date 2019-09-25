@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>项目作业</title>
+    <!-- 放文件的路径问题：绝对路径，相对路径，同级文件夹，异级文件夹 -->
     <link rel="stylesheet" href="../styles/cssForProject.css">
 </head>
 
 <body>
-    <h1><a href="#">学习大纲</a></h1>
+    <h1><a href="01.html">学习大纲</a></h1>
     <!-- 大盒子 -->
     <div class="list">
         <ul>
             <!-- 一级，二级菜单的父元素 li-->
             <li class="grandfather">
                 <div class="father">
-                    <a href="#" >HTML的标签</a>
+                    <a href="02.html" >HTML的标签</a>
                     <ol class="son">
                         <!-- 二级菜单的每一项内容 -->
                         <li>
-                            <a href="#">开始标签</a>
+                            <a href="images/01-HTML的标签.jpg">开始标签</a>
                             <ol class="grandson">
                                 <li>
                                     <a href="#">三级菜单</a>
@@ -32,7 +33,7 @@
                             </ol>                      
                         </li>
                         <li>
-                            <a href="#">标签名</a>
+                            <a href="images/01-HTML的标签.jpg">标签名</a>
                             <ol class="grandson">
                                 <li>
                                     <a href="#">2三级菜单</a>
@@ -40,7 +41,7 @@
                             </ol>
                         </li>
                         <li>
-                            <a href="#">结束标签</a>
+                            <a href="images/01-HTML的标签.jpg">结束标签</a>
                             <ol class="grandson">
                                 <li>
                                     <a href="#">3三级菜单</a>
@@ -48,7 +49,7 @@
                             </ol>
                         </li>
                         <li>
-                            <a href="#">列表标签</a>
+                            <a href="images/13-列表标签以及样式属性-01.jpg">列表标签</a>
                         </li>
                     </ol>
                 </div>
@@ -57,31 +58,31 @@
                     <ol class="son">
                         <!-- 二级菜单的每一项内容 -->
                         <li>
-                            <a href="#">前景色与背景色</a>                         
+                            <a href="images/29-背景图片属性-01.jpg">前景色与背景色</a>                         
                         </li>
                         <li>
-                            <a href="#">超链接</a>
+                            <a href="images/22-超链接标签与属性.jpg">超链接</a>
                         </li>
                         <li>
-                            <a href="#">CSS的display属性</a>
+                            <a href="images/28-CSS的display属性.jpg">CSS的display属性</a>
                         </li>
                         <li>
-                            <a href="#">背景图片属性</a>
+                            <a href="images/30-背景图片属性-02.jpg">背景图片属性</a>
                         </li>
                     </ol>
                 </div>
                 <div class="father">
-                    <a href="#" >CSS的盒子模型</a>
+                    <a href="images/17-CSS的盒子模型.jpg" >CSS的盒子模型</a>
                     <ol class="son">
                         <!-- 二级菜单的每一项内容 -->
                         <li>
-                            <a href="#">CSS的边框-<span>核心技术</span></a>
+                            <a href="images/18-CSS的盒子模型-边框.jpg">CSS的边框-<span>核心技术</span></a>
                         </li>
                         <li>
-                            <a href="#">CSS盒子模型的边框</a>                         
+                            <a href="images/19-CSS的盒子模型-边框-2.jpg">CSS盒子模型的边框</a>                         
                         </li>
                         <li>
-                            <a href="#">CSS盒子模型的边距</a>
+                            <a href="images/20-CSS的盒子模型-边距-内边距.jpg">CSS盒子模型的边距</a>
                         </li>
                     </ol>
                 </div>
@@ -89,7 +90,7 @@
                     <a href="#">案例演示分析</a>
                     <ol class="son">
                         <li>
-                            <a href="#">分解目标</a>
+                            <a href="案例-01.html">分解目标</a>
                         </li>
                     </ol>
                 </div>
@@ -123,7 +124,7 @@
                             <a href="#">定位中的相对定位</a>
                         </li>
                         <li>
-                            <a href="#">定位种的绝对定位</a>
+                            <a href="#">定位中的绝对定位</a>
                         </li>
                         <li>
                             <a href="#">body的父元素是什么？</a>
@@ -148,13 +149,13 @@
                     </ol>
                 </div>
                 <div class="father">
-                    <a href="#">二维码的显示与隐藏效果</a>
+                    <a href="二维码的动态显示效果.html">二维码的显示与隐藏效果</a>
                     <ol class="son">
                         <li>
-                            <a href="#">display</a>
+                            <a href="images/33-案例的演示与分析02-01.jpg">display</a>
                         </li>
                         <li>
-                            <a href="#">hover</a>
+                            <a href="images/34-案例的演示与分析02-02.jpg">hover</a>
                         </li>
                         <li>
                             <a href="#">position等</a>
@@ -168,6 +169,28 @@
                 
             </li>
         </ul>
+    </div>
+    <div id="money">
+        <p>income：
+            <span id="count">4368</span>
+            <p>total：<span id="count">52416</span>&nbsp &nbsp per year</p>
+            <p>4368-575=<span id="count">3793</span></p>
+            <p><span id="count">1793</span> for life per month？？？</p>
+            <p>loan：120000</p>
+            <p>rates：575*12=6900,6900*3=20700</p>
+            <p>borrow：200000+200000=400000</p>
+            <p>payback per month in <span id="payback">5</span> years：400000/5/12=<span id="pay">6700</span></p>
+            <p>house to pay：<span id="payback">800000</span></p>
+            <p>rent：
+                <ol>
+                    <li id="issue">Internet：60</li>
+                    <li id="issue">E-Motorcycle：50</li>
+                    <li id="issue">Motorcycle charge：25</li>
+                    <li id="issue">VPN fee：10</li>
+                </ol>
+            </p>
+            <p>live：1500</p>
+        </p>
     </div>
 </body>
 </html>
