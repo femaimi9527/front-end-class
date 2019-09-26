@@ -1,17 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='app' ng-controller='mainController'>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>项目作业</title>
+    <title ng-bind='mainTitle'>项目作业</title>
     <!-- 放文件的路径问题：绝对路径，相对路径，同级文件夹，异级文件夹 -->
     <link rel="stylesheet" href="../styles/cssForProject.css">
+    <!-- 通过CDN方式引用Balloon的CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+    <link rel="stylesheet" href="https://www.bootcss.com/p/buttons/css/buttons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
 </head>
 
 <body>
     <h1><a href="01.html">学习大纲</a></h1>
+    <!-- aria-label的属性值也可以使用NG的变量填入，不错！ -->
+    <button class="myButton" data-balloon-length="medium" aria-label="{{tips_1}}" data-balloon-pos="right" ng-click='func()'>点我调用controller中的函数</button>
+    <p id="msg" ng-show = 'showFlag'>{{msg}}</p>
+    <p>{{}}</p>
+    <button class="myButton" data-balloon-length="medium" aria-label="{{tips_2}}" data-balloon-pos="right" ng-click = 'clickHandler()'>测试按钮</button>
+    <ul id="index" class="angular1">
+        <li  ng-repeat ='li_info in li_infos track by $index' ng-click = 'li_click($index)'>{{li_info}}</li>
+    </ul>
+    <!-- ------------------------------------------------------------------------------------- -->
+    <script>
+        var app = angular.module('app',[]);
+        app.controller ('mainController',['$scope',function($scope){
+            $scope.mainTitle = '项目作业+angularJS事件监听';
+            $scope.tips_1 = '点击这个按钮之后，调用了func函数，func函数执行了控制台输出语句“here is a func”'
+            $scope.tips_2 = '点击这个按钮之后，调用了clickHandler函数'
+            $scope.showFlag = true; //默认显示
+            $scope.showFlag = 'here is a test of msg';
+            $scope.msg = 'here is a test massage';
+            $scope.func = function(){
+                console.log('here is a func');
+            };
+            $scope.clickHandler = function(){
+                console.log('测试内容');
+                $scope.showFlag = !$scope.showFlag;
+            };
+            $scope.li_infos = ['开玩笑','这可是最流行框架angularJS啊','结合HTML和CSS的知识'];
+            $scope.li_click = function(index){
+                console.log('点击的li的内容是：'+$scope.li_infos[index]);
+            };
+        }]);
+    </script>
+    <!-- ------------------------------------------------------------------------------------- -->
     <!-- 大盒子 -->
     <div class="list">
         <ul>
