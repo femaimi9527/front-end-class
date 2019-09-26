@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app' ng-controller='mainController'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson5-angularJS评论案例</title>
+    <!-- 引入 angularJS-1.7.8 的CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <!-- 引入 bootstrap-4.3.1 样式的CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <br /><br /><br />
+    <div class="container">
+        <div class="row">
+            <!-- 栅格思想：12 完美的分割，12的公约数最多 -->
+            <div class="col-xs-3"></div>
+            <!-- 也可以这么写：col-xs-6 col-xs-offset-3 表示向另一边偏移3份的距离 -->
+            <div class="col-xs-6">
+                <!-- 评论模块 -->
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model='comt'>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click='submitComment(comt)'>评论</button>
+                    </span>
+                </div>
+                <!-- 评论标题 -->
+                <h4 ng-show='commentArr.length>0'>评论</h4>
+                <!-- 评论内容 -->
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat='comment in commentArr track by $index'>
+                        <span>{{comment}}</span>
+                        <!-- javascript:;表示禁止跳转，但是还是超链接，能执行超链接的点击操作 -->
+                        <a href="javascript:;" class="btn btn-danger" ng-click='deleteComment($index)'>删除本条评论</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-3"></div>
+        </div> 
+    </div>
+
+    <!-- ----------------------------------------------- -->
+    <script>
+        var app = angular.module('app', []);
+        app.controller('mainController', ['$scope', function ($scope) {
+            $scope.commentArr = [];
+            //评论功能
+            $scope.submitComment = function (comt) {
+                $scope.commentArr.push(comt);
+                $scope.comt = '';
+            };
+            // 删除评论
+            $scope.deleteComment = function (index) {
+                console.log(index);
+                //删除元素的两种办法：
+                // 第1种：最原始的办法，删除指定的元素
+                $scope.commentArr.splice(index, 1);
+                // 第2种：弊端：如果有重复元素，则会全删掉了
+                // _.without($scope.commentArr,$scope.commentArr[index]); 
+            };
+        }]);
+    </script>
+    <!-- ----------------------------------------------- -->
+</body>
+
+</html>
