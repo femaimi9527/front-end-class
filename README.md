@@ -8,3 +8,6 @@ front-end-class-from-imooc
 2019-09-21
 学习了元素的分类；
 背景图片属性；
+html ，css 静态样式上手后，比较空白的在css的动画效果那块；
+
+javascript控制上选择了使用前端框架angularJS
