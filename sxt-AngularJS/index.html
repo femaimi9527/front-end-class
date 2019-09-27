@@ -15,13 +15,15 @@
     <script src="js/apps/controllers/nameListController.js"></script>
     <!-- 引入 bootstrap-4.3.1 样式文件 -->
     <link rel="stylesheet" href="css/libs/bootstrap.css">
+    <!-- 引入 main.css 文件 -->
+    <link rel="stylesheet" href="css/apps/main.css">
 </head>
 
 <body>
-    <br /><br /><br />
-    <div class="container">
+    <br/><br/><br/>
+    <div class="container" ng-controller = 'commentController'>
         <div class="row">
-            <!-- 栅格思想：12 完美的分割，12的公约数最多 -->
+            <!-- 栅格思想：12 完美的分割，一开始是设计16格的，后来发现 12 的公约数最多,所以选了12 -->
             <div class="col-xs-3"></div>
             <!-- 也可以这么写：col-xs-6 col-xs-offset-3 表示向另一边偏移3份的距离 -->
             <div class="col-xs-6">
@@ -43,12 +45,19 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-xs-3"></div>
+            <div class="col-xs-3">
+                <br><br><br>
+                <div>
+                    <ul ng-controller = 'nameListController'>
+                        <li ng-repeat = 'liInfo in liInfoList track by $index'>{{liInfo}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-    <ul ng-controller = 'nameListController'>
-        <li ng-repeat = 'liInfo in liInfoList track by $index'>{{liInfo}}</li>
-    </ul>
+    
+    
+    
     <script>
         /*
             1、ng-controller与多控制器思想
