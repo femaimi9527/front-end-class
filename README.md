@@ -10,4 +10,4 @@ front-end-class-from-imooc
 背景图片属性；
 html ，css 静态样式上手后，比较空白的在css的动画效果那块；
 
-javascript控制上选择了使用前端框架angularJS
+javascript控制上选择了使用前端框架angularJS 版本是：1.7.8
