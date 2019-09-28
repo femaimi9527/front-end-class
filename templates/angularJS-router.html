@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>router路由</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        1、router路由
+        描述：router路由是angularJS中提出的，用于构建单页面应用的模块，
+              其本质是从 a 标签点击跳转功能延展而来的。
+        说明：
+            （1）router功能的实现需要依赖于angularJS的扩展库文件angular-route.min.js；
+            （2）router功能的实现需要依赖于ng-view指令，
+                【ng-view指令】的作用是提供标注【显示不同页面的容器】的作用；
+            （3）router功能的实现需要依赖于 a 标签的 href 属性，
+                href=‘#要加载的页面代号’，
+                此属性设置目的，是在 a 标签点击的时候能够通知路由，要加载哪一个页面；
+            （4）router路由的具体语法是通过app页面数据模型创建的，
+                通过config方法来构建一个路由，
+                在路由中，通过 .when() 来判定加载哪一个页面，
+                在路由中，通过 .otherwise() 来决定路由默认加载哪一个页面；
+
+                app模型.config(['$routerProvider', funtion($routerProvider){
+                    $routerProvider
+                        .when('/页面代号',{
+                            templateUrl:'要加载的页面的url地址(以路由所在的位置为起点)',
+                            controller：'对应页面的控制器名称'
+                        })
+                        ...
+                        .otherwise({
+                            redirectTo:'/默认加载的页面的代号'
+                        });
+                }]);
+        注意：
+            （1）如果需要使用路由功能，那么在创建页面数据模型app的时候，
+                必须要注入一条名为【ngRoute】的信息，此注入信息相当于对当前页面声明：我要使用路由功能，
+                语法： var app = angular.module('app', ['ngRoute']);
+            （2）在承载不同页面的容器上记得不要忘记加上 ng-view ，否则路由选中的页面无法加载。
+            https://cdn.bootcss.com/angular.js/1.5.8/angular-route.js
+            https://cdn.bootcss.com/angular.js/1.5.8/angular-route.min.js
+    */ 
+</script>
+</html>
