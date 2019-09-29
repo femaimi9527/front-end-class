@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ='app' ng-controller ='mainController'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{mainControllerTitle}}</title>
+    <script src="../angularJS-sxt/js/libs/angular.js"></script>
+</head>
+<body>
+
+    <!-- currency -->
+    <span>我的手机价格：</span>
+    <span>{{5799}}</span>
+    <br>
+    <!-- 默认转换为美元符号 -->
+    <span>{{5799 | currency}}</span>
+    <!-- 支持定制转换内容 -->
+    <span>{{5799| currency: '￥'}}</span>
+    <br><br><br>
+    <!-- filter -->
+    <input type="text" ng-model = 'filter_input'>
+    <ul>
+        <!-- 这里的坑：写了“track by $index”后，过滤服务不能生效 -->
+        <li ng-repeat = 'pname in pnames | filter:filter_input'>{{pname}}</li>
+    </ul>
+
+
+    <script>
+        var app = angular.module('app',[]);
+        app.controller('mainController', ['$scope', function($scope){
+            $scope.mainControllerTitle = '过滤服务';
+            $scope.filter_input = '';
+            $scope.pnames = ['frank','feona','Filler','fakila','feimin'];
+        }]);   
+        
+        /*
+            1、过滤服务$filter
+            描述：$filter服务在NG框架中是对数据进行转换显示的一种小工具，
+                 使用本服务能够让页面中的显示内容呈现为不一样的结构
+            语法：{{ 任意内容 | 过滤器 }}
+            补充：$filter虽然是系统服务，但是支持自定义内容
+            说明：
+                在$filter服务中共计提供了四种过滤器
+                （1）*** | currency: '货币符号'
+                    用于将内容转换为货币格式
+                    tips：默认转换为美元格式，当然支持定制，
+                （2）*** | $filter:子集数组
+                （3）
+                （4）
+        */ 
+    </script>
+</body>
+</html>
