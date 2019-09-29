@@ -1,5 +1,5 @@
 // 名称列表控制器
-app.controller('nameListController', ['$scope', function ($scope) {
+app.controller('nameListController', ['$scope','$filter', function ($scope,$filter) {
     $scope.liInfoList = [
         'frank',
         '测试下第一种filter功能{{money | currency:￥}}',
