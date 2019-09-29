@@ -35,8 +35,8 @@
             <div class="col-sm-3">
                 <!-- 1.搜索模块 -->
                 <div class="input-group">
-                    <button class="btn btn-dark" type="button" disabled='disabled'>速查框</button>
-                    <input type="text" placeholder="速查内容——不区分大小写，支持中文搜索" class="form-control input-lg"
+                    <button class="btn btn-dark" type="button">速查框</button>
+                    <input type="text" placeholder="速查——不区分大小写，支持中文或拼音搜索" class="form-control input-lg"
                         ng-model='filter_input'>
                 </div>
                 <br>
@@ -50,15 +50,16 @@
                 </div>
             </div>
             <div class="col-sm-2">
-                <!-- 信息列表模块 -->
-                <button class="btn btn-light">信息列表</button>
+                <!-- 信息列表模块 $filter的排序-->
+                <button class="btn btn-info">信息列表</button>
                 <br /><br />
                 <ul class="list-group" ng-controller='infoListController'>
+                    <!-- 这里的 infoList 是对象结构 -->
                     <li class="list-group-item list-group-item-action" ng-repeat='info in infoList | orderBy:"score"'>姓名：{{info.name}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp分数：{{info.score}}</li>
                 </ul>
             </div>
             <!-- 2.评论模块 -->
-            <div class="col-sm-4" ng-controller='commentController'>
+            <div class="col-sm-2" ng-controller='commentController'>
                 <div class="input-group">
                     <input type="text" class="form-control" ng-model='comt'>
                     <span class="input-group-btn">
@@ -79,6 +80,15 @@
                             ng-click='deleteComment($index)'>删除本条评论</a>
                     </li>
                 </ul>
+            </div>
+            <!-- uppercase & lowercase -->
+            <div class="col-sm-2">
+                <h5>大小写转换-仅支持中英文</h5>
+                <h6>{{'hello WORLD! 你好世界！| そすのち' | uppercase}}</h6>
+                <h6>{{'hello WORLD! 你好世界！| そすのち' | lowercase}}</h6>
+            </div>
+            <div class="col-sm-2">
+                <p>{{ famousPhase | '人不吃饭就会饿'}}</p>
             </div>
         </div>
     </div>
