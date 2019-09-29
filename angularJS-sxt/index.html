@@ -14,6 +14,7 @@
     <script src="js/apps/controllers/mainController.js"></script>
     <script src="js/apps/controllers/commentController.js"></script>
     <script src="js/apps/controllers/nameListController.js"></script>
+    <script src="js/apps/controllers/infoListController.js"></script>
     <!-- 引入 bootstrap-4.3.1 样式文件 -->
     <link rel="stylesheet" href="css/libs/bootstrap.css">
     <!-- 引入 main.css 文件 -->
@@ -26,47 +27,64 @@
 </head>
 
 <body>
-    <br /><br /><br />
-    <div class="container-fluid" ng-controller='commentController'>
+    <br /><br />
+    <div class="container-fluid">
         <div class="row">
             <!-- 栅格思想：12 完美的分割，一开始是设计16格的，后来发现 12 的公约数最多,所以选了12 -->
-            <div class="col-sm-3"></div>
-            <!-- 也可以这么写：col-xs-6 col-xs-offset-3 表示向另一边偏移3份的距离 -->
-            <div class="col-sm-5">
-                <!-- 评论模块 -->
+            <!-- Bootstrap的栅格布局，也可以这么写：col-xs-6 col-xs-offset-3 表示向另一边偏移3份的距离 -->
+            <div class="col-sm-3">
+                <!-- 1.搜索模块 -->
+                <div class="input-group">
+                    <button class="btn btn-info" type="button" disabled='disabled'>速查框</button>
+                    <input type="text" placeholder="速查内容——不区分大小写，支持中文搜索" class="form-control input-lg"
+                        ng-model='filter_input'>
+                </div>
+                <br>
+                <!-- 5.名称列表模块 -->
+                <div>
+                    <!-- 步骤1：ng-model; 步骤2：| filter：子集数组 不能带“track by $index”-->
+                    <ul ng-controller='nameListController'>
+                        <!-- 这里的 filter_input子集数组名称不能用 filter-input 这种连字符 -->
+                        <li ng-repeat='liInfo in liInfoList | filter:filter_input'>{{liInfo}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <!-- 信息列表模块 -->
+                <button class="btn btn-info">信息列表</button>
+                <br /><br />
+                <ul class="list-group" ng-controller='infoListController'>
+                    <li class="list-group-item list-group-item-action" ng-repeat='info in infoList | orderBy:"score"'>姓名：{{info.name}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp分数：{{info.score}}</li>
+                </ul>
+            </div>
+            <!-- 2.评论模块 -->
+            <div class="col-sm-4" ng-controller='commentController'>
                 <div class="input-group">
                     <input type="text" class="form-control" ng-model='comt'>
                     <span class="input-group-btn">
                         <button class="btn btn-primary" ng-click='submitComment(comt)'>
-                            <div class="trigger-success" data-iziToast>评论</div>
+                            <div>评论</div>
                         </button>
                     </span>
-                </div>
-                <!-- 评论标题 -->
+                </div><br>
+                <!-- 3.评论标题 -->
+                <!-- 长度大于0才显示“评论详情”几个字哦 -->
                 <h4 ng-show='commentArr.length>0'>评论详情</h4>
-                <!-- 评论内容 -->
+                <!-- 4.评论内容 -->
                 <ul class="list-group">
                     <li class="list-group-item" ng-repeat='comment in commentArr track by $index'>
                         <span class="commentList">{{comment}}</span>
-                        <!-- javascript:;表示禁止跳转，但是还是超链接，能执行超链接的点击操作 -->
-                        <a href="javascript:;" class="btn btn-danger" ng-click='deleteComment($index)'>删除本条评论</a>
+                        <!-- 属性值：javascript:;表示禁止跳转，但是还是超链接，能执行超链接的点击操作 -->
+                        <a href="javascript:;" id="delComt" class="btn btn-danger"
+                            ng-click='deleteComment($index)'>删除本条评论</a>
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-4">
-                <br><br><br>
-                <div>
-                    <ul ng-controller='nameListController'>
-                        <li ng-repeat='liInfo in liInfoList track by $index'>{{liInfo}}</li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </div>
 
     <!-- trigger-notices-UI usages 用法示例 -->
-    <ul class="buttons col-sm-1">
+    <!-- <ul class="buttons col-sm-1">
         <li><a href="#" class="trigger-info" data-iziToast>Info</a></li>
         <li><a href="#" class="trigger-success" data-iziToast>Success</a></li>
         <li><a href="#" class="trigger-warning" data-iziToast>Warning</a></li>
@@ -74,7 +92,7 @@
         <li><a href="#" class="trigger-custom1">Custom I</a></li>
         <li><a href="#" class="trigger-custom2">Custom II</a></li>
         <li class="lava"></li>
-    </ul>
+    </ul> -->
 
 
     <script>

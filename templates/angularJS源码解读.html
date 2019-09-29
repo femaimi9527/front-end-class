@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title ng-bind></title>
+    <script src="../angularJS-sxt/js/libs/angular.js"></script>
+    <style>
+        p {
+          margin: 10px 0 3px;
+        }
+      </style>
+</head>
+<body>
+    <div module="cacheExampleApp" name="cache-factory">
+        <div name="index.html">
+          <div ng-controller="CacheController">
+            <input ng-model="newCacheKey" placeholder="Key">
+            <input ng-model="newCacheValue" placeholder="Value">
+            <button ng-click="put(newCacheKey, newCacheValue)">Cache</button>
+   
+            <p ng-if="keys.length">Cached Values></p>
+            <div ng-repeat="key in keys">
+              <span ng-bind="key"></span>
+              <span>: </span>
+              <div ng-bind="cache.get(key)"></div>
+            </div>
+   
+            <p>Cache Info</p>
+            <div ng-repeat="(key, value) in cache.info()">
+              <span ng-bind="key"></span>
+              <span>: </span>
+              <b ng-bind="value"></b>
+            </div>
+          </div>
+        </div>
+        <script>
+          angular.module('cacheExampleApp', []).
+            controller('CacheController', ['$scope', '$cacheFactory', function($scope, $cacheFactory) {
+              $scope.keys = [];
+              $scope.cache = $cacheFactory('cacheId');
+              $scope.put = function(key, value) {
+                if (angular.isUndefined($scope.cache.get(key))) {
+                  $scope.keys.push(key);
+                }
+                $scope.cache.put(key, angular.isUndefined(value) ? null : value);
+              };
+            }]);
+        </script>
+        
+    </div>
+</body>
+</html>
